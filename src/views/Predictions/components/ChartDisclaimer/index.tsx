@@ -1,0 +1,40 @@
+import React from 'react'
+import { Modal, Text, Button, InjectedModalProps, LinkExternal, Flex } from '@crosswise/uikit'
+import { useTranslation } from 'contexts/Localization'
+
+interface ChartDisclaimerProps extends InjectedModalProps {
+  onSuccess: () => void
+}
+
+const ChartDisclaimer: React.FC<ChartDisclaimerProps> = ({ onSuccess, onDismiss }) => {
+  const { t } = useTranslation()
+
+  const handleConfirm = () => {
+    onSuccess()
+    onDismiss()
+  }
+
+  return (
+    <Modal title={t('Welcome!')} minWidth="320px" maxWidth="400px" onDismiss={onDismiss}>
+      <Text as="p" mb="16px">
+        {t('Charts are provided for reference only and do not reflect rounds’ final outcome.')}
+      </Text>
+      <Text as="p" mb="16px">
+        {t('Please refer to the prices shown on the cards for the final outcome.')}
+      </Text>
+      <Button width="100%" onClick={handleConfirm} mb="16px">
+        {t('I understand')}
+      </Button>
+      <Flex justifyContent="center" alignItems="center">
+        <LinkExternal
+          href="https://docs.pancakeswap.finance/products/prediction/prediction-faq#what-are-you-using-for-your-price-feed"
+          external
+        >
+          {t('Learn More')}
+        </LinkExternal>
+      </Flex>
+    </Modal>
+  )
+}
+
+export default ChartDisclaimer

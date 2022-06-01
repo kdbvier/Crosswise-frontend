@@ -1,0 +1,84 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "chainlinkFeeds",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "deviation",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "heartbeat",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "decimal",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "gap",
+        "type": "uint64"
+      },
+      {
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_token",
+        "type": "address"
+      }
+    ],
+    "name": "getTokenPrice",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "price0",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "zValuePerRuleOutPercent",
+    "outputs": [
+      {
+        "internalType": "int32",
+        "name": "",
+        "type": "int32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
